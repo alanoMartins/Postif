@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a indexaw2');
+  //res.send('respond with a indexaw2');
 });
 
 module.exports = router;

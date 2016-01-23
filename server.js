@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/user');
+var cors = require('./cors');
 
 //Database
 var pg = require('pg');
@@ -21,12 +22,14 @@ var app  = express();
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/', routes);
+
+app.use(cors()); //CROSS DOMAIN
+
+app.use('/cards', routes);
 app.use('/users', users);
 
 var port = process.env.PORT || 8080;        // set our port
 var conString = "postgres://postif:postifix@localhost:5432/postifdb";
-
 
 
 // catch 404 and forward to error handler
@@ -59,9 +62,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
-
 
 // START THE SERVER
 // =============================================================================

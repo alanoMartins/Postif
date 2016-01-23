@@ -31,17 +31,17 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/login', function(req, res, next) {
-	
-	models.Users.get(req.params.user_id, function(user){
-		res.send(JSON.stringify(user));
-	},
-	function(error){
-		res.send(error);	
+router.post('/login', function(req, res, next) {
+
+		models.Users.login(req.body.username, req.body.password, function(user){
+			res.send(JSON.stringify(user));
+		},
+		function(error){
+			res.status(403).send({type:'Error', message: error});
+		});
+
+		// On error callback
+
 	});
-
-	// On error callback
-
-});
 
 module.exports = router;

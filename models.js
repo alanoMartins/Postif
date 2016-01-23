@@ -52,4 +52,27 @@ Models.Users.get = function(id, onDone, onError) {
 	});
 }
 
+Models.Users.login = function(name, password, onDone, onError) {
+	pg.connect(conString, function(err, client, done) {
+
+		var query = client.query({
+	      text: 'SELECT * FROM "Users" Where name = $1 and password = $2',
+	      values: [name, password],
+	    }, function(err, result) {
+	    	
+	    	if(result.rowCount == 0){
+	    		err = "user.not.found";
+	    	}
+
+	    	if(err){
+				onError(err);
+			} else {
+				onDone(result.rows);	
+			}
+	    });	
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
 module.exports = Models;
