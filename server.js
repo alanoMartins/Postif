@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/user');
+var cards = require('./routes/card');
 var cors = require('./cors');
 
 //Database
@@ -25,7 +26,8 @@ app.use(bodyParser.json());
 
 app.use(cors()); //CROSS DOMAIN
 
-app.use('/cards', routes);
+app.use('/', routes);
+app.use('/cards', cards);
 app.use('/users', users);
 
 var port = process.env.PORT || 8080;        // set our port

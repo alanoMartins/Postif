@@ -13,44 +13,44 @@ Models.init = function(){
 	//Prepare db
 }
 
-Models.Users.list = function(onDone, onError) {
+// Models.Users.list = function(onDone, onError) {
 
-	pg.connect(conString, function(err, client, done) {
+// 	pg.connect(conString, function(err, client, done) {
 
-		var query = client.query('SELECT * FROM "Users"', function(err, result) {
-			if(err){
-				onError(err);
-			} else {
-				onDone(result.rows);	
-			}
+// 		var query = client.query('SELECT * FROM "Users"', function(err, result) {
+// 			if(err){
+// 				onError(err);
+// 			} else {
+// 				onDone(result.rows);	
+// 			}
 			
-		});
+// 		});
 
-	    query.on('end', client.end.bind(client));
-	});
-}
+// 	    query.on('end', client.end.bind(client));
+// 	});
+// }
 
-Models.Users.get = function(id, onDone, onError) {
+// Models.Users.get = function(id, onDone, onError) {
 
-	pg.connect(conString, function(err, client, done) {
+// 	pg.connect(conString, function(err, client, done) {
 
 
-		var query = client.query({
-	      text: 'SELECT * FROM "Users" Where id = $1',
-	      values: [id],
-	    });	
+// 		var query = client.query({
+// 	      text: 'SELECT * FROM "Users" Where id = $1',
+// 	      values: [id],
+// 	    });	
 
-		query.on('row', function(row) {
-			onDone(row);
-	    });
+// 		query.on('row', function(row) {
+// 			onDone(row);
+// 	    });
 
-	    query.on('error', function(error) {
-	      onError(error);
-	    });
+// 	    query.on('error', function(error) {
+// 	      onError(error);
+// 	    });
 
-	    query.on('end', client.end.bind(client));
-	});
-}
+// 	    query.on('end', client.end.bind(client));
+// 	});
+// }
 
 Models.Users.login = function(name, password, onDone, onError) {
 	pg.connect(conString, function(err, client, done) {
@@ -62,6 +62,29 @@ Models.Users.login = function(name, password, onDone, onError) {
 	    	
 	    	if(result.rowCount == 0){
 	    		err = "user.not.found";
+	    	}
+
+	    	if(err){
+				onError(err);
+			} else {
+				onDone(result.rows);	
+			}
+	    });	
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Models.Cards.list = function(owner, onDone, onError) {
+	pg.connect(conString, function(err, client, done) {
+
+		var query = client.query({
+	      text: 'SELECT * FROM "Card" Where owner = $1',
+	      values: [owner],
+	    }, function(err, result) {
+	    	
+	    	if(result.rowCount == 0){
+	    		err = "card.not.found";
 	    	}
 
 	    	if(err){
