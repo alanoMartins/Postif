@@ -26,7 +26,7 @@ Models.Users.list = function(onDone, onError) {
 			
 		});
 
-	    query.on('end', client.end.bind(client)); //disconnect client manually
+	    query.on('end', client.end.bind(client));
 	});
 }
 
@@ -48,7 +48,7 @@ Models.Users.get = function(id, onDone, onError) {
 	      onError(error);
 	    });
 
-	    query.on('end', client.end.bind(client)); //disconnect client manually
+	    query.on('end', client.end.bind(client));
 	});
 }
 

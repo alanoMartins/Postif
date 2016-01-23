@@ -30,4 +30,18 @@ router.get('/', function(req, res, next) {
 
 });
 
+
+router.get('/login', function(req, res, next) {
+	
+	models.Users.get(req.params.user_id, function(user){
+		res.send(JSON.stringify(user));
+	},
+	function(error){
+		res.send(error);	
+	});
+
+	// On error callback
+
+});
+
 module.exports = router;
