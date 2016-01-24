@@ -3,37 +3,39 @@ var router = express.Router();
 
 var models = require('../models');
 
-/* GET users listing. */
-// router.get('/:user_id', function(req, res, next) {
-
-// 	models.Users.get(req.params.user_id, function(user){
-// 		res.send(JSON.stringify(user));
-// 	},
-// 	function(error){
-// 		res.send(error);	
-// 	});
-
-// });
-
-
-// router.get('/', function(req, res, next) {
-// 	models.Users.list(function(users){
-// 		res.send(JSON.stringify(users));
-// 	},
-// 	function(error){
-// 		res.send(error);	
-// 	});
-// });
-
 
 router.post('/login', function(req, res, next) {
 
-		models.Users.login(req.body.username, req.body.password, function(user){
-			res.send(JSON.stringify(user));
+	models.Users.login(req.body.username, req.body.password, function(user){
+
+		var newToken = models.Users.generateToken();
+
+		models.Users.updateToken(user.id, newToken, function() {
+
+			res.send(JSON.stringify({token: newToken}));
+
+		}, function(error){
+			res.status(400).send({type:'Error', message: error});
+		});
+
+		
+	},
+	function(error){
+		res.status(403).send({type:'Error', message: error});
+	});
+});
+
+
+router.post('/logout', function(req, res, next) {
+
+		models.Users.logout(req.body.token, function(user){
+			res.send(JSON.stringify({message: "Logout"}));
 		},
 		function(error){
 			res.status(403).send({type:'Error', message: error});
 		});
 	});
+
+
 
 module.exports = router;

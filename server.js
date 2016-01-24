@@ -8,16 +8,18 @@ var express    = require('express');
 var bodyParser = require('body-parser');
 
 //Routes
-var routes = require('./routes/index');
 var users = require('./routes/user');
 var cards = require('./routes/card');
+var auth = require('./routes/auth');
 var cors = require('./cors');
 
 //Database
 var pg = require('pg');
 
 //Application
-var app  = express();               
+var app  = express();  
+
+
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -26,9 +28,12 @@ app.use(bodyParser.json());
 
 app.use(cors()); //CROSS DOMAIN
 
-app.use('/', routes);
-app.use('/cards', cards);
+//Don`t need auth
 app.use('/users', users);
+
+app.use(auth());
+app.use('/cards', cards);
+
 
 var port = process.env.PORT || 8080;        // set our port
 var conString = "postgres://postif:postifix@localhost:5432/postifdb";

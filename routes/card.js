@@ -5,16 +5,26 @@ var models = require('../models');
 
 router.post('/list', function(req, res, next) {
 
-		// models.Cards.list(req.body.owner, function(cards){
-		// 	res.send(JSON.stringify(cards));
-		// },
-		// function(error){
-		// 	res.status(400).send({type:'Error', message: error});
-		// });
+	console.log("LIST");
 
-		var cards = [{title: "Card 1", description: "New card", owner: "alano"}]
-		res.send(JSON.stringify(cards));
+		models.Users.get(req.body.token, function(user){
 
+			console.log("USER");
+			console.log(user);
+			
+			models.Cards.list(user.id, function(cards){
+				res.send(JSON.stringify(cards));
+			},
+			function(error){
+				res.status(400).send({type:'Error', message: error});
+			});
+
+		},
+		function(error){
+			res.status(403).send({type:'Error', message: error});
+		});
+
+		
 	});
 
 module.exports = router;
