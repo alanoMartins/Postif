@@ -5,13 +5,8 @@ var models = require('../models');
 
 router.post('/list', function(req, res, next) {
 
-	console.log("LIST");
-
 		models.Users.get(req.body.token, function(user){
 
-			console.log("USER");
-			console.log(user);
-			
 			models.Cards.list(user.id, function(cards){
 				res.send(JSON.stringify(cards));
 			},
