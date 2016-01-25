@@ -1,7 +1,8 @@
 //Database
 var pg = require('pg');
 
-var conString = "postgres://postif:postifix@localhost:5432/postifdb";
+//var conString = "postgres://postif:postifix@localhost:5432/postifdb"; // Local
+var conString = "postgres://shgjgtwfzvknmy:MhjLzgGTzmByTGzNLHJ5I_BGk8@ec2-54-243-149-147.compute-1.amazonaws.com:5432/dbhchj9jer61jt"; // Heroku
 
 Models = {
 	Users: {},

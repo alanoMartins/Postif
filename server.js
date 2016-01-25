@@ -12,6 +12,7 @@ var users = require('./routes/user');
 var cards = require('./routes/card');
 var auth = require('./routes/auth');
 var cors = require('./cors');
+var migration = require('./migration');
 
 //Database
 var pg = require('pg');
@@ -36,8 +37,11 @@ app.use('/cards', cards);
 
 
 var port = process.env.PORT || 8080;        // set our port
-var conString = "postgres://postif:postifix@localhost:5432/postifdb";
 
+//Migratio
+migration.Users.table();
+migration.Cards.table();
+migration.Users.insert();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
