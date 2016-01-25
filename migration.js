@@ -20,7 +20,7 @@ Migration.Users.table = function() {
 
 	pg.connect(conString, function(err, client, done) {
 
-		var createStatement = 'CREATE TABLE IF NOT EXISTS "Users" ' +
+		var createStatement = 'CREATE TABLE "Users" ' +
 			'(' +
 			  'id serial NOT NULL,' +
 			  'name character varying(100),' +
@@ -46,7 +46,7 @@ Migration.Users.table = function() {
 Migration.Cards.table = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var createStatement = 'CREATE TABLE IF NOT EXISTS "Card" ' +
+		var createStatement = 'CREATE TABLE "Card" ' +
 			'(' +
 			  'id serial NOT NULL, ' +
 			  'title character varying(100), ' +
