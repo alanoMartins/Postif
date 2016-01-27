@@ -1,7 +1,6 @@
 # Postif
 
-Heroku
-Procfile file will be necessary to heroku deploy
+Running in https://postifherokuapp.herokuapp.com
 
 ## Run locally
 ```
