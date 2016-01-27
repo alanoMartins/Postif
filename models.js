@@ -158,6 +158,7 @@ Models.Cards.list = function(owner, onDone, onError) {
 	});
 }
 
+
 Models.Users.generateToken = function (){
 	return Math.random().toString(36).substr(2);
 }
