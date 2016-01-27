@@ -39,7 +39,7 @@ app.use('/cards', cards);
 var port = process.env.PORT || 8080;        // set our port
 
 //Migratio
-migration.execute();
+//migration.execute();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
