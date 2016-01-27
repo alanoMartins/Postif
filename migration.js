@@ -123,7 +123,7 @@ Migration.Users.insertUser2 = function() {
 Migration.Cards.Cards1 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (1,  \'Card 1\', \'Description A\', 1);'
 
@@ -141,7 +141,7 @@ Migration.Cards.Cards1 = function() {
 Migration.Cards.Cards2 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (2,  \'Card 2\', \'Description B\', 1);'
 
@@ -159,7 +159,7 @@ Migration.Cards.Cards2 = function() {
 Migration.Cards.Cards3 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (3,  \'Card 3\', \'Description C\', 1);'
 
@@ -177,7 +177,7 @@ Migration.Cards.Cards3 = function() {
 Migration.Cards.Cards4 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (4,  \'Card 4\', \'Description D\', 1);'
 
@@ -195,7 +195,7 @@ Migration.Cards.Cards4 = function() {
 Migration.Cards.Cards5 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (5,  \'Card 5\', \'Description E\', 1);'
 
@@ -213,7 +213,7 @@ Migration.Cards.Cards5 = function() {
 Migration.Cards.Cards6 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (6,  \'Card 6\', \'Description F\', 1);'
 
@@ -231,7 +231,7 @@ Migration.Cards.Cards6 = function() {
 Migration.Cards.Cards7 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (7,  \'Card 7\', \'Description G\', 2);'
 
@@ -249,7 +249,7 @@ Migration.Cards.Cards7 = function() {
 Migration.Cards.Cards8 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (8,  \'Card 8\', \'Description H\', 2);'
 
@@ -267,7 +267,7 @@ Migration.Cards.Cards8 = function() {
 Migration.Cards.Cards9 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (9,  \'Card 9\', \'Description I\', 2);'
 
@@ -285,7 +285,7 @@ Migration.Cards.Cards9 = function() {
 Migration.Cards.Cards10 = function() {
 	pg.connect(conString, function(err, client, done) {
 
-		var insertStatement =  'INSERT INTO "Users"(' +
+		var insertStatement =  'INSERT INTO "Card"(' +
             'id, title, description, owner)'+
     		'VALUES (10,  \'Card 10\', \'Description J\', 2);'
 
