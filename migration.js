@@ -11,11 +11,11 @@ Migration = {
 
 
 Migration.execute = function(){
-	migration.Users.table();
-	migration.Users.insertUser1();
-	migration.Users.insertUser2();
+	Migration.Users.table();
+	Migration.Users.insertUser1();
+	Migration.Users.insertUser2();
 
-	migration.Cards.table();
+	Migration.Cards.table();
 	Migration.Cards.Cards1();
 	Migration.Cards.Cards2();
 	Migration.Cards.Cards3();
