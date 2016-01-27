@@ -300,4 +300,184 @@ Migration.Cards.Cards10 = function() {
 	});
 }
 
+Migration.Cards.Cards1 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (11,  \'Card 11\', \'Description L\', 1);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards2 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (12,  \'Card 12\', \'Description M\', 1);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards3 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (13,  \'Card 13\', \'Description N\', 1);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards4 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (14,  \'Card 14\', \'Description O\', 1);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards5 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (15,  \'Card 15\', \'Description P\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards6 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (16,  \'Card 16\', \'Description Q\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards7 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (17,  \'Card 17\', \'Description R\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards8 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (18,  \'Card 18\', \'Description R\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards9 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (19,  \'Card 19\', \'Description S\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
+Migration.Cards.Cards20 = function() {
+	pg.connect(conString, function(err, client, done) {
+
+		var insertStatement =  'INSERT INTO "Card"(' +
+            'id, title, description, owner)'+
+    		'VALUES (20,  \'Card 20\', \'Description T\', 2);'
+
+		query = client.query(insertStatement);
+
+		query.on('error', function(error) {
+      		console.log(error);
+    	});
+
+
+	    query.on('end', client.end.bind(client));
+	});
+}
+
 module.exports = Migration;
